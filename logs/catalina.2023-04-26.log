@@ -1,0 +1,5 @@
+26-Apr-2023 14:50:41.554 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/tomcat003/webapps/veasy003]
+26-Apr-2023 14:50:42.132 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/tomcat003/webapps/veasy003] has finished in [637] ms
+26-Apr-2023 14:52:52.208 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Reloading context [/veasy003]
+26-Apr-2023 14:52:52.209 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/veasy003] has started
+26-Apr-2023 14:52:52.579 INFO [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/veasy003] is completed
