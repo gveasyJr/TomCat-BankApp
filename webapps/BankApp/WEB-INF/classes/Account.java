@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 
 public class Account {
     Double balance;
@@ -11,9 +12,10 @@ public class Account {
         this.balance = balance;
         this.type = type;
         this.name = name;
+        this.transactions = new ArrayList<History>();
     }
 
-    public void doTransaction(Account fromAccount, Account toAccount, double amount){
+    public static void doTransaction(Account fromAccount, Account toAccount, double amount){
         if(amount > fromAccount.getBalance()){
             return;
         }
@@ -33,6 +35,10 @@ public class Account {
     public void depositAccount(double amount){
         balance = balance + amount;
         transactions.add(new History("Deposited", amount));
+    }
+
+    public List<History> getTransactions(){
+        return transactions;
     }
 
     public void logTransactionState(){}
