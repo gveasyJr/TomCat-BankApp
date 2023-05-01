@@ -29,6 +29,15 @@ public class User {
         }
     }
 
+    public double getUserBalance(){
+        double userBalance = 0.00;
+
+        for (int i = 0; i < accounts.size(); i++){
+            userBalance += accounts.get(i).getBalance();
+        }
+        return userBalance;
+    }
+
     public int getID(){
         return ID;
     }

@@ -13,8 +13,6 @@ public class Account {
         this.name = name;
     }
 
-
-
     public void doTransaction(Account fromAccount, Account toAccount, double amount){
         if(amount > fromAccount.getBalance()){
             return;
@@ -36,4 +34,7 @@ public class Account {
         balance = balance + amount;
         transactions.add(new History("Deposited", amount));
     }
+
+    public void logTransactionState(){}
+    public void getTransactionState(){}
 }
