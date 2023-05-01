@@ -37,6 +37,10 @@ public class Account {
         transactions.add(new History("Deposited", amount));
     }
 
+    public String getAccountName(){
+        return name;
+    }
+
     public List<History> getTransactions(){
         return transactions;
     }

@@ -49,4 +49,12 @@ public class User {
     public List<Account> getAccounts(){
         return accounts;
     }
+
+    public List<String> getAccountNames(){
+        List<String> accountNames = new ArrayList<String>();
+        for(int i = 0; i < accounts.size(); i++){
+            accountNames.add(accounts.get(i).getAccountName());
+        }
+        return accountNames;
+    }
 }

@@ -39,6 +39,10 @@ public class Test {
         user1.deleteAccount(acct2);
         System.out.println("After 2nd addAccount() call: " + user1.getAccounts());
 
+        //test delete accounts and get accounts
+        user1.deleteAccount(acct2);
+        System.out.println("After 2nd addAccount() call: " + user1.getAccountNames());
+
         //Account Object Tests//
         ///////////////////////
 
@@ -50,5 +54,7 @@ public class Test {
         //test transaction history
         System.out.println("The 1st transaction history: " + acct1.getTransactions());
         System.out.println("The 2nd transaction history: " + acct3.getTransactions());
+
+        System.out.println("The 1st accounts name: " + acct1.getAccountName());
     }
 }
