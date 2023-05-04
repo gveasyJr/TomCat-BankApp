@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.ArrayList;
 //A "User" object will be used to represent a single bank user:
 //Example: John Smith
@@ -21,10 +22,14 @@ public class User {
     }
 
     public void deleteAccount(Account account){
+        if(account.getBalance() != 0.00){
+            System.out.println("Failure: Cannot delete account with funds");
+            return;
+        }
         try{
             accounts.remove(account);
         }
-        catch (IndexOutOfBoundsException ex){
+        catch (NoSuchElementException ex){
             System.out.println("There are no accounts to delete");
         }
     }
@@ -48,6 +53,15 @@ public class User {
 
     public List<Account> getAccounts(){
         return accounts;
+    }
+
+    public Account getAccount(String name){
+        for(int i = 0; i < accounts.size(); i++){
+            if(accounts.get(i).getAccountName().compareTo(name) == 0){
+                return accounts.get(i);
+            }
+        }
+        throw new NoSuchElementException("The account named: " + name + "was not found");
     }
 
     public List<String> getAccountNames(){

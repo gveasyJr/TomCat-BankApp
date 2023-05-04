@@ -8,15 +8,16 @@ public class Account {
     List<History> transactions;
 
 
-    public Account(Double balance, String type, String name){
+    public Account(Double balance, String name){
         this.balance = balance;
-        this.type = type;
+        this.type = "DEFAULT";
         this.name = name;
         this.transactions = new ArrayList<History>();
     }
 
     public static void doTransaction(Account fromAccount, Account toAccount, double amount){
         if(amount > fromAccount.getBalance()){
+            System.out.println("Failure: Insufficient funds for transfeer");
             return;
         }
         toAccount.depositAccount(amount);
@@ -39,6 +40,10 @@ public class Account {
 
     public String getAccountName(){
         return name;
+    }
+
+    public String getType(){
+        return type;
     }
 
     public List<History> getTransactions(){
