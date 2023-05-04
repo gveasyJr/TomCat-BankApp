@@ -21,12 +21,12 @@
          version="4.0">
 
   <servlet>
-    <servlet-name>Selection</servlet-name>
-    <servlet-class>Selection</servlet-class>
+    <servlet-name>Balance</servlet-name>
+    <servlet-class>Balance</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Selection</servlet-name>
-    <url-pattern>/Selection</url-pattern>
+    <servlet-name>Balance</servlet-name>
+    <url-pattern>/Balance</url-pattern>
   </servlet-mapping>
 
     <servlet>

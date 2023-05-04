@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+//import java.util.*;
+//import java.io.*;
 
 
 
@@ -16,9 +16,9 @@ public class Test {
         Double balance2 = 200.00;
         Double balance3 = 300.00;
 
-        Double amt1 = 10.00;
-        Double amt2 = 20.00;
-        Double amt3 = 30.00;
+        // Double amt1 = 10.00;
+        // Double amt2 = 20.00;
+        // Double amt3 = 30.00;
 
 
         Checking acct1 = new Checking (balance1, acct1Name);

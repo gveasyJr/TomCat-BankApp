@@ -1,7 +1,6 @@
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import User;
 
 
 public class Balance extends HttpServlet{
@@ -10,9 +9,8 @@ public class Balance extends HttpServlet{
     {
         String username = request.getParameter("User");
         HttpSession session = request.getSession();
-        User user = new User(username);
+        User user = new User(username, 12);
         session.setAttribute(username, user);
-
 
         sendPage(response, user.getUsername());
     }
