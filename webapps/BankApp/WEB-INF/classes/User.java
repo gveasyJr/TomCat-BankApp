@@ -17,6 +17,17 @@ public class User {
         this.accounts = new ArrayList<Account>();
     }
 
+    public User(String username){
+        this.username = username;
+        this.accounts = new ArrayList<Account>();
+    }
+
+    /*public User newUser(){
+        User user = new User ("New User", 1);
+        user.addAccount("");
+        return user;
+    }*/
+
     public void addAccount(Account account){
         accounts.add(account);
     }
