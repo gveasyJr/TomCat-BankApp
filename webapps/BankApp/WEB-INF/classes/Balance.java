@@ -1,6 +1,7 @@
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.util.List;
 
 
 public class Balance extends HttpServlet{
@@ -10,12 +11,21 @@ public class Balance extends HttpServlet{
         String username = request.getParameter("User");
         HttpSession session = request.getSession();
         User user = new User(username, 12);
+		
+        Checking acct1 = new Checking (10.0, "1st");
+        Saving acct2 = new Saving (10.0, "2nd");
+        Mortgage acct3 = new Mortgage(10.0, "3rd");
+
+        user.addAccount(acct1);
+        user.addAccount(acct2);
+        user.addAccount(acct3);
+
         session.setAttribute(username, user);
 
-        sendPage(response, user.getUsername());
+        sendPage(response, user.getUsername(), user);
     }
 
-    public void sendPage(HttpServletResponse reply, String user)
+    public void sendPage(HttpServletResponse reply, String username, User user)
     throws IOException
     {
         reply.setContentType("text/HTML");
@@ -29,31 +39,21 @@ public class Balance extends HttpServlet{
         out.println("<BODY>");
 
 		out.println("<CENTER>");
-		out.println("<H1><FONT COLOR=Red>" + "Welcome: " + user + "</FONT></H1>");
+		out.println("<H1><FONT COLOR=Red>" + "Welcome: " + username + "</FONT></H1>");
 		out.println("<BR><BR><BR>");
 
 		out.println("<TABLE>");
     	out.println("<TR><TH>Account</TH><TH>Type</TH><TH>Balance</TH></TR>");
-    		//for (Account account : accounts) {
 
-      		out.println("<TR>");
-			out.println("<TD> New User Account #1</TD>");
-      		out.println("<TD> CHECKING </TD>");
-      		out.println("<TD> 200.00 </TD>");
-      		out.println("</TR>");
-
+		List<Account> accounts = user.getAccounts();
+    	for(Account account : accounts) {
 			out.println("<TR>");
-			out.println("<TD> New User Account #2</TD>");
-      		out.println("<TD> MORTGAGE </TD>");
-      		out.println("<TD> 200.00 </TD>");
+			out.println("<TD>" + account.getAccountName() + "</TD>");
+      		out.println("<TD>" + account.getType() + "</TD>");
+      		out.println("<TD>" + account.getBalance() + "</TD>");
       		out.println("</TR>");
-
-			out.println("<TR>");
-			out.println("<TD> New User Account #3</TD>");
-      		out.println("<TD> SAVINGS </TD>");
-      		out.println("<TD> 300.00 </TD>");
-      		out.println("</TR>");
-    		//}
+    	}
+			
     	out.println("</TABLE>");
 		out.println("<BR><BR><BR>");
 
@@ -93,7 +93,7 @@ public class Balance extends HttpServlet{
 		out.println("<INPUT TYPE='Text' NAME='Name' VALUE=''>");
 		out.println("<INPUT TYPE='Submit' VALUE='Submit'>");
 		out.println("</FORM>");
-		
+
 		out.println("</CENTER>");
 		out.println("</BODY>");
 		out.println("</HTML>");
