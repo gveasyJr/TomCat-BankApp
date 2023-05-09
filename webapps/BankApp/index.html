@@ -18,30 +18,21 @@ Home page for the banking application. This will be the login page
 		<CENTER>
 		<H1><FONT COLOR="blue">User Login Page</FONT></H1>
 		<BR>
-		<FORM  METHOD=POST  ACTION="Balance">
+		<H2>Default Account User Usernames:</H2>
+		<H3>adam1</H3>
+		<H3>guy3</H3>
 
-			<TABLE> 
-				<TR>
-					<TD><INPUT  TYPE="Radio"  NAME="User"  VALUE = "New User"  CHECKED>
-					<FONT COLOR="Black">New User</FONT></TD>
-				</TR>
-				<TR>
-					<TD><INPUT  TYPE="Radio"  NAME="User"  VALUE = "John Snow">
-					<FONT COLOR="Black">John Snow</FONT></TD>
-				</TR>
-				<TR>
-					<TD><INPUT  TYPE="Radio"  NAME="User"  VALUE = "Arya Stark">
-					<FONT COLOR="Black">Arya Stark</FONT></TD>
-				</TR>
-
-			</TABLE>
-
-			<BR><BR><BR>
-			<INPUT TYPE="Submit" VALUE="Submit">
-
+		<FORM  METHOD=POST  ACTION="HomePage">
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="login-username"></td>
+                </tr>
+            </table>
+            <a href="adduser.html"><input type="button" value="ADD NEW USER"></a>
+            <input type="submit" value="LOGIN">
 		</FORM>
 		</CENTER>
-
 	</BODY>
 </HTML>
 

@@ -11,9 +11,8 @@ public class User {
     String username;
     List<Account> accounts;
 
-    public User(String username, int id){
+    public User(String username){
         this.username = username;
-        this.ID = id;
         this.accounts = new ArrayList<Account>();
     }
 
