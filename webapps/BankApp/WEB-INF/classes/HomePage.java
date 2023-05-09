@@ -2,9 +2,11 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.List;
+import java.util.HashMap;
 
 
 public class HomePage extends HttpServlet{
+	private boolean initCalled = false;
 
 	public void giveBalance(User user, PrintWriter out){
 		List<Account> accounts = user.getAccounts();
@@ -13,9 +15,9 @@ public class HomePage extends HttpServlet{
     	out.println("<TR><TH>Account</TH><TH>Type</TH><TH>Balance</TH></TR>");
     	for(Account account : accounts) {
 			out.println("<TR>");
-			out.println("<TD>" + account.getAccountName() + "</TD>");
-      		out.println("<TD>" + account.getType() + "</TD>");
-      		out.println("<TD>" + account.getBalance() + "</TD>");
+			out.println("<TD>" + account.getAccountName() + "  " + "</TD>");
+      		out.println("<TD>" + account.getType() + "  " + "</TD>");
+      		out.println("<TD>" + account.getBalance() + "  " + "</TD>");
       		out.println("</TR>");
 			total = total + account.getBalance();
     	}
@@ -24,26 +26,67 @@ public class HomePage extends HttpServlet{
 		out.println("<BR><BR><BR>");
 	}
 
+	public HashMap<String, User> initUsers(){
+		User user1 = new User("adam1");
+		Checking acct1 = new Checking (200.0, "Adam's Checkings Account");
+        Saving acct2 = new Saving (1200.0, "Adam's Savings Account");
+        Mortgage acct3 = new Mortgage(300.0, "Adam's Mortgages Account");
+        user1.addAccount(acct1);
+        user1.addAccount(acct2);
+        user1.addAccount(acct3);
+
+
+		User user2 = new User("guy3");
+		Checking acct4 = new Checking (10.0, "Guy's Checkings Account");
+        Saving acct5 = new Saving (900.0, "Guy's Savings Account");
+        Mortgage acct6 = new Mortgage(4000.0, "Guy's Mortgages Account");
+        user2.addAccount(acct4);
+        user2.addAccount(acct5);
+        user2.addAccount(acct6);
+
+		HashMap<String, User> users = new HashMap<>();
+		users.put(user1.getUsername(), user1);
+		users.put(user2.getUsername(), user2);
+
+		return users;
+	}
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
-        String username = request.getParameter("login-name");
-        /*HttpSession session = request.getSession();
+		String username = request.getParameter("login-username");
+        HttpSession session = request.getSession();
+		HashMap<String, User> users = null;
 
-		if (username == null) {
+
+		if (!initCalled || users == null) {
+            users = initUsers();
+            initCalled = true;
+        }
+
+		if(username.equals("adam1")){
+			User user = users.get("adam1");
+			session.setAttribute("user", user);
+		}
+		else if (username.equals("guy3")){
+			User user = users.get("guy3");
+			session.setAttribute("user", user);
+		}
+		/*else if (username == null) {
             username = session.getAttribute("username").toString();
-        } else {
-            session.setAttribute("username", username);
-        }*/
+        }*/ 
+		else {
+            User user = new User("new user");
+        	Checking acct1 = new Checking (10.0, "1st");
+        	Saving acct2 = new Saving (10.0, "2nd");
+        	Mortgage acct3 = new Mortgage(10.0, "3rd");
+        	user.addAccount(acct1);
+        	user.addAccount(acct2);
+        	user.addAccount(acct3);
+        	session.setAttribute("user", user);
+        }
+		/*session.setAttribute("username", username);*/
 
-        User user = new User(username);
-        Checking acct1 = new Checking (10.0, "1st");
-        Saving acct2 = new Saving (10.0, "2nd");
-        Mortgage acct3 = new Mortgage(10.0, "3rd");
-        user.addAccount(acct1);
-        user.addAccount(acct2);
-        user.addAccount(acct3);
-        /*session.setAttribute("User", user);*/
-
+		User user = (User)session.getAttribute("user");
 		PrintWriter out = response.getWriter();
 
 		response.setContentType("text/html");
@@ -97,6 +140,7 @@ public class HomePage extends HttpServlet{
 		out.println("</form>");
 		out.flush();
     }
+
 }
 
 

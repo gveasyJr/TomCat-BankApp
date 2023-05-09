@@ -4,22 +4,46 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet("/CreateUser")
+@WebServlet("/AddUser")
 public class AddUser extends HttpServlet {
+    List<User> userList;
+    private boolean initCalled = false;
 
-    private void createUser(String username) {
+    public void init() throws ServletException {
+        super.init();
+        userList = new ArrayList<User>();
+        userList.add(new User("adam1"));
+        userList.add(new User("guy3"));
+    }
+
+    private User createUser(String username) {
         User newUser = new User(username);
-        /*DatabaseWriter.writeUserToDatabase(newUser);*/
+        Checking acct1 = new Checking (100.0, "Default Checkings Account");
+        Saving acct2 = new Saving (100.0, "Default Savings Account");
+        Mortgage acct3 = new Mortgage(100.0, "Default Mortgages Account");
+        newUser.addAccount(acct1);
+        newUser.addAccount(acct2);
+        newUser.addAccount(acct3);
+        return newUser;
     }
     
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-
         String username = request.getParameter("signup-username");
+        boolean userExists = false;
 
-        /*DatabaseReader dbr = new DatabaseReader();*/
-        /*boolean userExists = dbr.isUserExist(username);*/
+        if (!initCalled) {
+            super.init();
+            initCalled = true;
+        }
+
+        for(User user : userList){
+            if (user.getUsername().equals(username)){
+                userExists = true;
+                break;
+            }
+        }
 
         session.setAttribute("username", username);
 
@@ -39,18 +63,22 @@ public class AddUser extends HttpServlet {
         out.println("</head>");
         out.println("<center>");
         
-        // user does not already exist, create one
         if (!userExists) {
-
-            this.createUser(username);
-
-            out.println("<h1>Sucessfully created account</h1>");
+            User newUser = this.createUser(username);
+            userList.add(newUser);
+            session.setAttribute("user", newUser);
+            out.println("<h1>Sucessfully created user</h1>");
             out.println("<h1>Welcome " + username + "</h1>");
             out.println("<form method=POST action=\"UserHome\">");
-            out.println("<button name=\"login-username\" value=\"" + username + "\">Return to User Home Page</button>");
+            out.println("<button name=\"login-username\" value=\"" + username + "\">Go to Home Page</button>");
             out.println("</form>");
         } else {
-
+            out.println("<h1>Failed to create user</h1>");
+            out.println("<h1>The username: " + username + "is not valid"+ "</h1>");
+            out.println("<h1>Try again</h1>");
+            out.println("<form method=POST action=\"AddUser\">");
+            out.println("<button name=\"login-username\" value=\"" + username + "\">Return to Add User</button>");
+            out.println("</form>");
         }
 
 
@@ -60,8 +88,8 @@ public class AddUser extends HttpServlet {
     }
 
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        doPost(req, resp);
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        doPost(request, response);
     }
 
 }
