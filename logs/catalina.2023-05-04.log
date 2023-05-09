@@ -59,3 +59,247 @@
 04-May-2023 13:20:26.210 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager] has finished in [27] ms
 04-May-2023 13:20:26.214 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 04-May-2023 13:20:26.233 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2198] milliseconds
+04-May-2023 16:34:02.347 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-May-2023 16:34:02.429 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-May-2023 16:34:02.570 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+04-May-2023 16:34:03.018 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-May-2023 16:34:03.098 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+04-May-2023 16:42:31.335 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.74
+04-May-2023 16:42:31.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 13 2023 08:10:39 UTC
+04-May-2023 16:42:31.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.74.0
+04-May-2023 16:42:31.360 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+04-May-2023 16:42:31.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            12.5.1
+04-May-2023 16:42:31.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+04-May-2023 16:42:31.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
+04-May-2023 16:42:31.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           20+36-2344
+04-May-2023 16:42:31.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+04-May-2023 16:42:31.362 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 16:42:31.362 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 16:42:31.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-May-2023 16:42:31.525 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-May-2023 16:42:31.525 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-May-2023 16:42:31.548 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-May-2023 16:42:31.548 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-May-2023 16:42:31.548 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/geoffreyveasy/Desktop/TomCat-BankApp/conf/logging.properties
+04-May-2023 16:42:31.549 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-May-2023 16:42:31.549 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-May-2023 16:42:31.552 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-May-2023 16:42:31.552 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-May-2023 16:42:31.553 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-May-2023 16:42:31.553 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 16:42:31.553 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 16:42:31.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/geoffreyveasy/Desktop/TomCat-BankApp/temp
+04-May-2023 16:42:31.588 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/geoffreyveasy/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+04-May-2023 16:42:32.278 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-May-2023 16:42:32.322 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1466] milliseconds
+04-May-2023 16:42:32.405 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-May-2023 16:42:32.405 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.74]
+04-May-2023 16:42:32.426 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet]
+04-May-2023 16:42:32.954 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet] has finished in [527] ms
+04-May-2023 16:42:32.955 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp]
+04-May-2023 16:42:33.009 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp] has finished in [54] ms
+04-May-2023 16:42:33.009 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet]
+04-May-2023 16:42:33.045 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet] has finished in [35] ms
+04-May-2023 16:42:33.045 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder]
+04-May-2023 16:42:33.085 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder] has finished in [40] ms
+04-May-2023 16:42:33.086 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs]
+04-May-2023 16:42:33.116 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs] has finished in [30] ms
+04-May-2023 16:42:33.117 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager]
+04-May-2023 16:42:33.172 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager] has finished in [56] ms
+04-May-2023 16:42:33.172 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples]
+04-May-2023 16:42:33.542 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples] has finished in [370] ms
+04-May-2023 16:42:33.542 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart]
+04-May-2023 16:42:33.596 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart] has finished in [53] ms
+04-May-2023 16:42:33.596 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT]
+04-May-2023 16:42:33.617 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT] has finished in [20] ms
+04-May-2023 16:42:33.617 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet]
+04-May-2023 16:42:33.647 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet] has finished in [30] ms
+04-May-2023 16:42:33.647 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet]
+04-May-2023 16:42:33.678 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet] has finished in [31] ms
+04-May-2023 16:42:33.678 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager]
+04-May-2023 16:42:33.701 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager] has finished in [22] ms
+04-May-2023 16:42:33.706 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-May-2023 16:42:33.724 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1399] milliseconds
+04-May-2023 17:24:19.356 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-May-2023 17:24:19.381 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:24:19.420 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+04-May-2023 17:24:19.675 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:24:19.683 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:24:46.106 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.74
+04-May-2023 17:24:46.121 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 13 2023 08:10:39 UTC
+04-May-2023 17:24:46.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.74.0
+04-May-2023 17:24:46.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+04-May-2023 17:24:46.122 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            12.5.1
+04-May-2023 17:24:46.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+04-May-2023 17:24:46.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
+04-May-2023 17:24:46.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           20+36-2344
+04-May-2023 17:24:46.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+04-May-2023 17:24:46.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:24:46.123 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:24:46.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-May-2023 17:24:46.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-May-2023 17:24:46.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-May-2023 17:24:46.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-May-2023 17:24:46.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-May-2023 17:24:46.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/geoffreyveasy/Desktop/TomCat-BankApp/conf/logging.properties
+04-May-2023 17:24:46.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-May-2023 17:24:46.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-May-2023 17:24:46.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-May-2023 17:24:46.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-May-2023 17:24:46.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-May-2023 17:24:46.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:24:46.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:24:46.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/geoffreyveasy/Desktop/TomCat-BankApp/temp
+04-May-2023 17:24:46.156 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/geoffreyveasy/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+04-May-2023 17:24:46.854 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:24:46.936 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1206] milliseconds
+04-May-2023 17:24:47.023 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-May-2023 17:24:47.024 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.74]
+04-May-2023 17:24:47.037 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet]
+04-May-2023 17:24:47.496 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet] has finished in [459] ms
+04-May-2023 17:24:47.497 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp]
+04-May-2023 17:24:47.561 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp] has finished in [63] ms
+04-May-2023 17:24:47.561 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet]
+04-May-2023 17:24:47.612 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet] has finished in [51] ms
+04-May-2023 17:24:47.612 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder]
+04-May-2023 17:24:47.698 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder] has finished in [85] ms
+04-May-2023 17:24:47.698 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs]
+04-May-2023 17:24:47.740 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs] has finished in [41] ms
+04-May-2023 17:24:47.740 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager]
+04-May-2023 17:24:47.890 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager] has finished in [150] ms
+04-May-2023 17:24:47.891 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples]
+04-May-2023 17:24:48.845 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples] has finished in [953] ms
+04-May-2023 17:24:48.845 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart]
+04-May-2023 17:24:48.899 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart] has finished in [54] ms
+04-May-2023 17:24:48.900 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT]
+04-May-2023 17:24:48.919 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT] has finished in [20] ms
+04-May-2023 17:24:48.919 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet]
+04-May-2023 17:24:48.942 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet] has finished in [23] ms
+04-May-2023 17:24:48.942 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet]
+04-May-2023 17:24:48.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet] has finished in [27] ms
+04-May-2023 17:24:48.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager]
+04-May-2023 17:24:48.996 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager] has finished in [27] ms
+04-May-2023 17:24:49.000 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:24:49.017 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2078] milliseconds
+04-May-2023 17:31:05.483 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-May-2023 17:31:05.487 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:31:05.501 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+04-May-2023 17:31:05.616 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:31:05.636 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:31:22.510 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.74
+04-May-2023 17:31:22.527 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 13 2023 08:10:39 UTC
+04-May-2023 17:31:22.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.74.0
+04-May-2023 17:31:22.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+04-May-2023 17:31:22.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            12.5.1
+04-May-2023 17:31:22.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+04-May-2023 17:31:22.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
+04-May-2023 17:31:22.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           20+36-2344
+04-May-2023 17:31:22.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+04-May-2023 17:31:22.530 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:31:22.530 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:31:22.555 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-May-2023 17:31:22.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-May-2023 17:31:22.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-May-2023 17:31:22.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-May-2023 17:31:22.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-May-2023 17:31:22.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/geoffreyveasy/Desktop/TomCat-BankApp/conf/logging.properties
+04-May-2023 17:31:22.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-May-2023 17:31:22.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-May-2023 17:31:22.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-May-2023 17:31:22.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-May-2023 17:31:22.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-May-2023 17:31:22.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:31:22.559 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 17:31:22.559 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/geoffreyveasy/Desktop/TomCat-BankApp/temp
+04-May-2023 17:31:22.575 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/geoffreyveasy/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+04-May-2023 17:31:23.254 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:31:23.323 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1197] milliseconds
+04-May-2023 17:31:23.453 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-May-2023 17:31:23.454 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.74]
+04-May-2023 17:31:23.470 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet]
+04-May-2023 17:31:23.948 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet] has finished in [477] ms
+04-May-2023 17:31:23.948 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp]
+04-May-2023 17:31:24.008 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp] has finished in [59] ms
+04-May-2023 17:31:24.008 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet]
+04-May-2023 17:31:24.041 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet] has finished in [32] ms
+04-May-2023 17:31:24.041 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder]
+04-May-2023 17:31:24.073 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder] has finished in [32] ms
+04-May-2023 17:31:24.074 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs]
+04-May-2023 17:31:24.110 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs] has finished in [36] ms
+04-May-2023 17:31:24.112 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager]
+04-May-2023 17:31:24.198 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager] has finished in [86] ms
+04-May-2023 17:31:24.199 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples]
+04-May-2023 17:31:24.727 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples] has finished in [528] ms
+04-May-2023 17:31:24.728 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart]
+04-May-2023 17:31:24.768 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart] has finished in [41] ms
+04-May-2023 17:31:24.768 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT]
+04-May-2023 17:31:24.809 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT] has finished in [41] ms
+04-May-2023 17:31:24.810 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet]
+04-May-2023 17:31:24.833 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet] has finished in [22] ms
+04-May-2023 17:31:24.833 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet]
+04-May-2023 17:31:24.862 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet] has finished in [29] ms
+04-May-2023 17:31:24.862 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager]
+04-May-2023 17:31:24.884 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager] has finished in [22] ms
+04-May-2023 17:31:24.888 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-May-2023 17:31:24.904 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1579] milliseconds
+04-May-2023 21:01:06.397 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-May-2023 21:01:06.430 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-May-2023 21:01:06.452 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+04-May-2023 21:01:06.689 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-May-2023 21:01:06.791 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+04-May-2023 21:04:49.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.74
+04-May-2023 21:04:49.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 13 2023 08:10:39 UTC
+04-May-2023 21:04:49.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.74.0
+04-May-2023 21:04:49.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+04-May-2023 21:04:49.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            12.5.1
+04-May-2023 21:04:49.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+04-May-2023 21:04:49.860 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home
+04-May-2023 21:04:49.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           20+36-2344
+04-May-2023 21:04:49.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+04-May-2023 21:04:49.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 21:04:49.861 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 21:04:49.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-May-2023 21:04:49.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-May-2023 21:04:49.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-May-2023 21:04:49.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-May-2023 21:04:49.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-May-2023 21:04:49.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/geoffreyveasy/Desktop/TomCat-BankApp/conf/logging.properties
+04-May-2023 21:04:49.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-May-2023 21:04:49.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-May-2023 21:04:49.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-May-2023 21:04:49.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-May-2023 21:04:49.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-May-2023 21:04:49.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 21:04:49.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/geoffreyveasy/Desktop/TomCat-BankApp
+04-May-2023 21:04:49.899 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/geoffreyveasy/Desktop/TomCat-BankApp/temp
+04-May-2023 21:04:49.935 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/geoffreyveasy/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+04-May-2023 21:04:50.907 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-May-2023 21:04:51.073 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [2032] milliseconds
+04-May-2023 21:04:51.342 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-May-2023 21:04:51.342 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.74]
+04-May-2023 21:04:51.366 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet]
+04-May-2023 21:04:51.920 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/AdderServlet] has finished in [553] ms
+04-May-2023 21:04:51.920 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp]
+04-May-2023 21:04:52.006 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/BankApp] has finished in [86] ms
+04-May-2023 21:04:52.006 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet]
+04-May-2023 21:04:52.036 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/PersonalServlet] has finished in [30] ms
+04-May-2023 21:04:52.036 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder]
+04-May-2023 21:04:52.074 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/CookieAdder] has finished in [38] ms
+04-May-2023 21:04:52.074 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs]
+04-May-2023 21:04:52.112 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/docs] has finished in [37] ms
+04-May-2023 21:04:52.112 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager]
+04-May-2023 21:04:52.187 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/manager] has finished in [74] ms
+04-May-2023 21:04:52.187 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples]
+04-May-2023 21:04:52.593 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/examples] has finished in [406] ms
+04-May-2023 21:04:52.594 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart]
+04-May-2023 21:04:52.630 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ShoppingCart] has finished in [36] ms
+04-May-2023 21:04:52.630 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT]
+04-May-2023 21:04:52.648 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/ROOT] has finished in [18] ms
+04-May-2023 21:04:52.649 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet]
+04-May-2023 21:04:52.675 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/JDBCServlet] has finished in [26] ms
+04-May-2023 21:04:52.675 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet]
+04-May-2023 21:04:52.699 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/FirstServlet] has finished in [24] ms
+04-May-2023 21:04:52.700 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager]
+04-May-2023 21:04:52.720 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/geoffreyveasy/Desktop/TomCat-BankApp/webapps/host-manager] has finished in [20] ms
+04-May-2023 21:04:52.725 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-May-2023 21:04:52.750 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1633] milliseconds

@@ -8,8 +8,7 @@ public class Selection extends HttpServlet
 						HttpServletResponse response)
 			throws IOException,ServletException
 	{
-		String currentProduct =
-					request.getParameter("Product");
+		String currentProduct = request.getParameter("Product");
 		HttpSession cart = request.getSession();
 		cart.setAttribute("currentProd",currentProduct);
 
@@ -43,8 +42,7 @@ public class Selection extends HttpServlet
 
 		out.println("<TR>");
 		out.println("	<TD>Quantity required (kg)");
-		out.println(
-			"	<INPUT TYPE='Text' NAME='Qty'  VALUE=''  SIZE=5></TD>");
+		out.println("	<INPUT TYPE='Text' NAME='Qty'  VALUE=''  SIZE=5></TD>");
 		out.println("</TR>");
 		out.println("</TABLE>");
 

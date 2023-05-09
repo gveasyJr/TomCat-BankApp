@@ -57,29 +57,42 @@ public class Balance extends HttpServlet{
     	out.println("</TABLE>");
 		out.println("<BR><BR><BR>");
 
-		out.println("<H2>Add Account<H2>");
-		out.println("<FORM  METHOD=POST  ACTION='Add'>");
-		out.println("<label for='add-name'> Name: </label>");
+		out.println("<H3>Add An Account</H3>");
+		out.println("<FORM METHOD=POST ACTION='Add'>");
+		out.println("<label for='add-name'>Name: </label>");
 		out.println("<input type='text' id='add-name' name='add-name'>");
 		out.println("<INPUT TYPE='Submit' VALUE='Submit'>");
-	    out.println("</form>");
-		
-		
-		/*out.println("<input type="text" id="from-name" name="from-name">");
-		out.println("<label for="to-name">To:</label>");
-		out.println("<input type="text" id="to-name" name="to-name">");
-		out.println("<button type="submit">Submit</button>");*/
+		out.println("</FORM>");
 
-
-
-
-		out.println("<FORM  METHOD=POST  ACTION='Balance'");
-		out.println("<INPUT TYPE='Text' NAME='Name' VALUE='Add'>");
+		out.println("<H3>Delete An Account</H3>");
+		out.println("<FORM METHOD=POST ACTION='Add'>");
+		out.println("<label for='add-name'>Name: </label>");
+		out.println("<input type='text' id='add-name' name='add-name'>");
 		out.println("<INPUT TYPE='Submit' VALUE='Submit'>");
+		out.println("</FORM>");
 
+		out.println("<H3>Transfer Funds Between Accounts</H3>");
+		out.println("<FORM METHOD=POST ACTION='Add'>");
+		out.println("<label for='from-name'>Transfer from the account: </label>");
+		out.println("<input type='text' id='from-name' name='from-name'>");
+		out.println("<label for='to-name'>To the account:</label>");
+		out.println("<input type='text' id='to-name' name='to-name'>");
+		out.println("<label for='amount'>The amount: </label>");
+		out.println("<input type='text' id='amount' name='amount'>");
+		out.println("<INPUT TYPE='Submit' VALUE='Submit'>");
+		out.println("</FORM>");
 
+		out.println("<H3>View Balance History</H3>");
+		out.println("<FORM METHOD=POST ACTION='Balance'>");
+		out.println("<INPUT TYPE='Text' NAME='Name' VALUE=''>");
+		out.println("<INPUT TYPE='Submit' VALUE='Submit'>");
+		out.println("</FORM>");
 
-
+		out.println("<H3>View Log History</H3>");
+		out.println("<FORM METHOD=POST ACTION='Balance'>");
+		out.println("<INPUT TYPE='Text' NAME='Name' VALUE=''>");
+		out.println("<INPUT TYPE='Submit' VALUE='Submit'>");
+		out.println("</FORM>");
 		
 		out.println("</CENTER>");
 		out.println("</BODY>");

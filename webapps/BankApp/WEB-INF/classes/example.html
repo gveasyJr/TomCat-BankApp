@@ -1,0 +1,53 @@
+<HTML>
+    <HEAD>
+        <TITLE>User Main Page</TITLE>
+    </HEAD>
+
+    <BODY>
+            <CENTER>
+                <H1><FONT COLOR=Red>"Welcome: user"</FONT></H1>
+                <BR><BR><BR>
+                    <TABLE>
+                        <TR><TH>Account</TH><TH>Type</TH><TH>Balance</TH></TR>
+                    </TABLE>
+                    <BR><BR><BR>
+
+                        <H3>Add An Account</H3>
+                        <FORM  METHOD=POST  ACTION='Add'>
+                          <label for='add-name'> Name: </label>
+                          <input type='text' id='add-name' name='add-name'>
+                          <INPUT TYPE='Submit' VALUE='Submit'>
+                        </FORM>
+
+                        <H3>Delete An Account<H3></H3>
+                        <FORM  METHOD=POST  ACTION='Add'>
+                          <label for='add-name'> Name: </label>
+                          <input type='text' id='add-name' name='add-name'>
+                          <INPUT TYPE='Submit' VALUE='Submit'>
+                        </FORM>
+
+                        <H3>Transfeer Funds Between Accounts<H3></H3>
+                        <FORM  METHOD=POST  ACTION='Add'>
+                          <label for='from-name'> Transfeer from the account: </label>
+                          <input type="text" id="from-name" name="from-name">
+                          <label for="to-name">To the acount:</label>
+                          <input type="text" id="to-name" name="to-name">
+                          <label for='amount'> The amount: </label>
+                          <input type="text" id="amount" name="amount"">
+                          <INPUT TYPE='Submit' VALUE='Submit'>
+                        </FORM>  
+           
+                        <H3>View Balance History<H3></H3>
+                        <FORM  METHOD=POST  ACTION='Balance'>
+                          <INPUT TYPE='Text' NAME='Name' VALUE=''>
+                          <INPUT TYPE='Submit' VALUE='Submit'>
+                        </FORM>
+
+                        <H3>View Log History<H3></H3>
+                        <FORM  METHOD=POST  ACTION='Balance'>
+                          <INPUT TYPE='Text' NAME='Name' VALUE=''>
+                          <INPUT TYPE='Submit' VALUE='Submit'>
+                        </FORM>
+              </CENTER>
+    </BODY>
+</HTML>
