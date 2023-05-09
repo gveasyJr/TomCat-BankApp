@@ -47,7 +47,6 @@ public class HomePage extends HttpServlet{
 		HashMap<String, User> users = new HashMap<>();
 		users.put(user1.getUsername(), user1);
 		users.put(user2.getUsername(), user2);
-
 		return users;
 	}
 
@@ -56,6 +55,10 @@ public class HomePage extends HttpServlet{
 		String username = request.getParameter("login-username");
         HttpSession session = request.getSession();
 		HashMap<String, User> users = null;
+
+		@SuppressWarnings("unchecked")
+		HashMap<String, User> addedUsers = (HashMap<String, User>)session.getAttribute("addedUsers");
+		PrintWriter out = response.getWriter();
 
 
 		if (!initCalled || users == null) {
@@ -71,24 +74,16 @@ public class HomePage extends HttpServlet{
 			User user = users.get("guy3");
 			session.setAttribute("user", user);
 		}
-		/*else if (username == null) {
-            username = session.getAttribute("username").toString();
-        }*/ 
-		else {
-            User user = new User("new user");
-        	Checking acct1 = new Checking (10.0, "1st");
-        	Saving acct2 = new Saving (10.0, "2nd");
-        	Mortgage acct3 = new Mortgage(10.0, "3rd");
-        	user.addAccount(acct1);
-        	user.addAccount(acct2);
-        	user.addAccount(acct3);
-        	session.setAttribute("user", user);
-        }
-		/*session.setAttribute("username", username);*/
+		if (addedUsers != null && addedUsers.containsKey(username)) {
+			User user = addedUsers.get(username);
+			session.setAttribute("user", user);
+		}
+		/*else{
+			this.loadInvalidUserHTML(out);
+        } */
 
 		User user = (User)session.getAttribute("user");
-		PrintWriter out = response.getWriter();
-
+	
 		response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 		out.println("<!DOCTYPE html><html>");
@@ -107,7 +102,12 @@ public class HomePage extends HttpServlet{
 
 		/*logger.info("checking if " + username + " exists: " + dbr.isUserExist(username));*/
 
-        sendPage(out, username, user);
+		if(user == null){
+			this.loadInvalidUserHTML(out);
+		}
+		else{
+			sendPage(out, username, user);
+		}
 
 		out.println("</center>");
         out.println("</body>");
@@ -138,6 +138,15 @@ public class HomePage extends HttpServlet{
 		out.println("<form method=POST action=\"ViewAccountsHistory\">");
 		out.println("<button name=\"login-username\" value=\"" + username + "\">View History</button><br>");
 		out.println("</form>");
+		out.flush();
+    }
+
+	private void loadInvalidUserHTML(PrintWriter out) {
+        out.println("<h1>Username does not exist.</h1>");
+        out.println("<h1>Please create an account</h1>");
+        out.println("<form method=POST action=\"HomePage\">");
+        out.println("<a href=\"adduser.html\"><input type=\"button\" value=\"Sign up\"></a>");
+        out.println("</form>");
 		out.flush();
     }
 

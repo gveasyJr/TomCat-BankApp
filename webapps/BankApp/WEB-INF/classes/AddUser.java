@@ -6,14 +6,31 @@ import javax.servlet.http.*;
 
 @WebServlet("/AddUser")
 public class AddUser extends HttpServlet {
-    List<User> userList;
     private boolean initCalled = false;
 
-    public void init() throws ServletException {
-        super.init();
-        userList = new ArrayList<User>();
-        userList.add(new User("adam1"));
-        userList.add(new User("guy3"));
+    public HashMap<String, User> initUsers() throws ServletException {
+		User user1 = new User("adam1");
+		Checking acct1 = new Checking (200.0, "Adam's Checkings Account");
+        Saving acct2 = new Saving (1200.0, "Adam's Savings Account");
+        Mortgage acct3 = new Mortgage(300.0, "Adam's Mortgages Account");
+        user1.addAccount(acct1);
+        user1.addAccount(acct2);
+        user1.addAccount(acct3);
+
+
+		User user2 = new User("guy3");
+		Checking acct4 = new Checking (10.0, "Guy's Checkings Account");
+        Saving acct5 = new Saving (900.0, "Guy's Savings Account");
+        Mortgage acct6 = new Mortgage(4000.0, "Guy's Mortgages Account");
+        user2.addAccount(acct4);
+        user2.addAccount(acct5);
+        user2.addAccount(acct6);
+
+		HashMap<String, User> users = new HashMap<>();
+		users.put(user1.getUsername(), user1);
+		users.put(user2.getUsername(), user2);
+
+        return users;
     }
 
     private User createUser(String username) {
@@ -31,21 +48,19 @@ public class AddUser extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         String username = request.getParameter("signup-username");
+
+        HashMap<String, User> users = null;
+
         boolean userExists = false;
 
         if (!initCalled) {
-            super.init();
+            users = initUsers();
             initCalled = true;
         }
 
-        for(User user : userList){
-            if (user.getUsername().equals(username)){
-                userExists = true;
-                break;
-            }
+        if (users.containsKey(username)) {
+            userExists = true;
         }
-
-        session.setAttribute("username", username);
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -65,18 +80,21 @@ public class AddUser extends HttpServlet {
         
         if (!userExists) {
             User newUser = this.createUser(username);
-            userList.add(newUser);
+            users.put(newUser.getUsername(), newUser);
+            session.setAttribute("username", username);
+            session.setAttribute("addedUsers", users);
             session.setAttribute("user", newUser);
+
             out.println("<h1>Sucessfully created user</h1>");
             out.println("<h1>Welcome " + username + "</h1>");
-            out.println("<form method=POST action=\"UserHome\">");
+            out.println("<form method=POST action=\"HomePage\">");
             out.println("<button name=\"login-username\" value=\"" + username + "\">Go to Home Page</button>");
             out.println("</form>");
         } else {
             out.println("<h1>Failed to create user</h1>");
-            out.println("<h1>The username: " + username + "is not valid"+ "</h1>");
+            out.println("<h1>The username: " + username + " is not valid"+ "</h1>");
             out.println("<h1>Try again</h1>");
-            out.println("<form method=POST action=\"AddUser\">");
+            out.println("<form method=POST action=\"index.html\">");
             out.println("<button name=\"login-username\" value=\"" + username + "\">Return to Add User</button>");
             out.println("</form>");
         }
