@@ -11,6 +11,7 @@ public class AddAccount extends HttpServlet {
         String username = request.getParameter("login-username");
         String type = request.getParameter("account-type");
         String acctName = request.getParameter("account-name");
+        User user = (User)session.getAttribute("currentUser");
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -37,10 +38,8 @@ public class AddAccount extends HttpServlet {
         out.println("<center>");
         out.println("<body>");
 
+        out.println("<h1> before try </h1>");
 
-
-
-        User user = (User)session.getAttribute("user");
 
         try {
             if (type.equals("savings")) {
@@ -53,8 +52,10 @@ public class AddAccount extends HttpServlet {
                 Account acct = new Mortgage(0.0, acctName);
                 user.addAccount(acct);
             }
+
+            out.println("<h1> after try </h1>");
         
-            session.setAttribute("user", user);
+            session.setAttribute("currentUser", user);
         
             out.println("<h1>" + type + " account was successfully created " + "</h1>");
         

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 //A User should be able to: Add and Remove accounts
 
 public class User {
-    int ID;
     String username;
     List<Account> accounts;
 
@@ -56,10 +55,6 @@ public class User {
             userBalance += accounts.get(i).getBalance();
         }
         return userBalance;
-    }
-
-    public int getID(){
-        return ID;
     }
 
     public String getUsername(){

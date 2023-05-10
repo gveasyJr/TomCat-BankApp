@@ -48,7 +48,7 @@ public class PreDeleteAccount extends HttpServlet{
       		out.println("</TR>");
             //}
     	}
-        out.println("<h3>Only Accounts with Balances of 0.0 will appear</h3>");
+        out.println("<h3>If an account has funds (Funds aren't 0.0) the delete will fail.</h3>");
 		out.println("</TABLE>");
 		out.println("<BR><BR><BR>");
 
