@@ -34,16 +34,16 @@ public class PreAddAccount extends HttpServlet{
         out.println("<body>");
         out.println("<h1>Account Type</h1>");
         out.println("<form method=\"POST\" action=\"AddAccount\">");
-        out.println("<input type=\"radio\" id=\"checking\" name=\"account-type\" value=\"checking\">");
+        out.println("<input type=\"radio\" id=\"checking\" name=\"account-type\" value=\"checking\" checked>");
         out.println("<label for=\"checking\">Checking</label><br>");
         out.println("<input type=\"radio\" id=\"savings\" name=\"account-type\" value=\"savings\">");
         out.println("<label for=\"savings\">Savings</label><br>");
         out.println("<input type=\"radio\" id=\"mortgages\" name=\"account-type\" value=\"mortgages\">");
         out.println("<label for=\"mortgages\">Mortgages</label><br><br>");
         out.println("<label for=\"account-name\">Input Account Name: </label>");
-        out.println("<input type=\"text\" id=\"account-name\" name=\"account-name\"><br><br>");
+        out.println("<input type=\"text\" id=\"account-name\" name=\"account-name\" required><br><br>");
         out.println("<input type=\"hidden\" name=\"login-username\" value=\"" + username + "\">");
-        out.println("<input type=\"submit\" value=\"Create Account\">");
+        out.println("<input type=\"submit\" value=\"Create Account\">");        
         out.println("</form>");
         out.println("</body>");
 

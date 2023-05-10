@@ -2,18 +2,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class PreView extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session  = request.getSession();
         PrintWriter out = response.getWriter();
-
         // Retrieve the User object from the session
-        User user = (User) request.getSession().getAttribute("user");
+        User user = (User)session.getAttribute("currentUser");
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

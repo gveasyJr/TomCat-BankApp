@@ -38,8 +38,6 @@ public class AddAccount extends HttpServlet {
         out.println("<center>");
         out.println("<body>");
 
-        out.println("<h1> before try </h1>");
-
 
         try {
             if (type.equals("savings")) {
@@ -53,11 +51,10 @@ public class AddAccount extends HttpServlet {
                 user.addAccount(acct);
             }
 
-            out.println("<h1> after try </h1>");
         
             session.setAttribute("currentUser", user);
         
-            out.println("<h1>" + type + " account was successfully created " + "</h1>");
+            out.println("<h1>" + type + " account named '" + acctName + "' was successfully created " + "</h1>");
         
             out.println("<form method=POST action=\"HomePage\">");
             out.println("<button name=\"login-username\" value=\"" + username + "\">Return Home</button>");

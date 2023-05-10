@@ -9,7 +9,7 @@ public class PreDeleteAccount extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("login-username");
         HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User)session.getAttribute("currentUser");
 
         if (username == null) {
             username = session.getAttribute("username").toString();

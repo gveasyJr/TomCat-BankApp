@@ -10,6 +10,7 @@ public class DeleteAccount extends HttpServlet {
         HttpSession session  = request.getSession();
         String username = request.getParameter("login-username");
         String acctName = request.getParameter("account-name");
+        User user = (User)session.getAttribute("currentUser");
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -35,8 +36,6 @@ public class DeleteAccount extends HttpServlet {
         out.println("</head>");
         out.println("<center>");
         out.println("<body>");
-
-        User user = (User)session.getAttribute("user");
 
         try {
             Account accountToDelete = user.getAccount(acctName);

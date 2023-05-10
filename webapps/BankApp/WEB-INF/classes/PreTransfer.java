@@ -10,7 +10,7 @@ public class PreTransfer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User)session.getAttribute("currentUser");
         List<Account> accounts = user.getAccounts();
 
         response.setContentType("text/html");

@@ -9,7 +9,7 @@ public class Transfer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        User user = (User)session.getAttribute("currentUser");
         String sourceAccountName = request.getParameter("account-source");
         String destinationAccountName = request.getParameter("account-dest");
         String transferAmountStr = request.getParameter("amount");
@@ -48,7 +48,7 @@ public class Transfer extends HttpServlet {
                 out.println("</form>");
             } else {
                 Account.doTransaction(sourceAccount, destinationAccount, transferAmount);
-                session.setAttribute("user", user);
+                session.setAttribute("currentUser", user);
                 out.println("<h1>Transfer of $" + transferAmount + " from " + sourceAccountName + " to " + destinationAccountName + " was successful</h1>");
                 out.println("<form method=\"POST\" action=\"HomePage\">");
                 out.println("<button name=\"login-username\" value=\"" + user.getUsername() + "\">Return Home</button>");

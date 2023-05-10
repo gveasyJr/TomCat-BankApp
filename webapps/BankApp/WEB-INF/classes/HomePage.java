@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 	public class HomePage extends HttpServlet {
-    	private boolean initCalled = false;
-    	private List<User> users;
 
     	private void giveBalance(User user, PrintWriter out) {
         	List<Account> accounts = user.getAccounts();
@@ -29,30 +26,6 @@ import javax.servlet.http.HttpSession;
         	out.println("<h3>Total Account Balance: " + total + "</h3>");
         	out.println("</table>");
         	out.println("<br><br><br>");
-    	}
-
-    	private List<User> initUsers() {
-        	List<User> users = new ArrayList<>();
-
-        	User user1 = new User("adam1");
-        	Checking acct1 = new Checking(200.0, "Adam's Checking Account");
-        	Saving acct2 = new Saving(1200.0, "Adam's Savings Account");
-        	Mortgage acct3 = new Mortgage(300.0, "Adam's Mortgage Account");
-        	user1.addAccount(acct1);
-        	user1.addAccount(acct2);
-        	user1.addAccount(acct3);
-        	users.add(user1);
-
-        	User user2 = new User("guy3");
-        	Checking acct4 = new Checking(10.0, "Guy's Checking Account");
-        	Saving acct5 = new Saving(900.0, "Guy's Savings Account");
-        	Mortgage acct6 = new Mortgage(4000.0, "Guy's Mortgage Account");
-        	user2.addAccount(acct4);
-        	user2.addAccount(acct5);
-        	user2.addAccount(acct6);
-        	users.add(user2);
-
-        	return users;
     	}
 
     	@Override
@@ -84,27 +57,9 @@ import javax.servlet.http.HttpSession;
 			if(username == null || session.getAttribute(username) == null){
 				loadInvalidUserHTML(out);
 			}
+			else{
 
 			User user = (User)session.getAttribute(username);
-
-        	/*if (initCalled == false) {
-            	users = initUsers();
-            	initCalled = true;
-        	}
-
-        	User user = null;
-        	for (User u : users) {
-            	if (u.getUsername().equals(username)) {
-                	user = u;
-                	break;
-    	    	}
-        	}
-
-     	if (user == null) {
-         	   loadInvalidUserHTML(out);
-         	   return;
-        	}*/
-
 
         	session.setAttribute("currentUser", user);
 
@@ -130,10 +85,6 @@ import javax.servlet.http.HttpSession;
 			out.println("<h1>Welcome: " + username + "</h1>");
 			giveBalance(user, out);
 
-			/*out.println("<form method=\"POST\" action=\"ViewAccounts\">");
-			out.println("<button name=\"login-username\" value=\"" + username + "\">View Balance</button>");
-			out.println("</form>");*/
-
 			out.println("<form method=\"POST\" action=\"PreAddAccount\">");
 			out.println("<button name=\"login-username\" value=\"" + username + "\">Create Account</button><br>");
 			out.println("</form>");
@@ -158,6 +109,7 @@ import javax.servlet.http.HttpSession;
 			out.println("</body>");
 			out.println("</html>");
 		}
+	}
 
 		public void loadInvalidUserHTML(PrintWriter out) {
 			out.println("<h1>Username does not exist.</h1>");

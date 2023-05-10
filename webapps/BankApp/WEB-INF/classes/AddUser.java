@@ -41,13 +41,6 @@ public class AddUser extends HttpServlet {
             session.setAttribute("guy3", user2);
         }
 
-        if(session.getAttribute(username) != null){
-            out.println("<h1>User already exists!</h1>");
-            out.println("<p>Please choose a different username.</p>");
-            out.println("<form method=POST action=\"HomePage\">");
-            out.println("<button name=\"login-username\" value=\"" + username + "\">Go to Home Page</button>");
-        }
-
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 
@@ -64,7 +57,14 @@ public class AddUser extends HttpServlet {
         out.println("</head>");
         out.println("<center>");
 
+        if(session.getAttribute(username) != null){
+            out.println("<h1>User already exists!</h1>");
+            out.println("<p>Please choose a different username.</p>");
+            out.println("<form method=POST action=\"HomePage\">");
+            out.println("<button name=\"login-username\" value=\"" + username + "\">Go to Home Page</button>");
+        }
 
+       else{
         User newUser = createUser(username);
         session.setAttribute(username, newUser);
         out.println("<h1>User added successfully!</h1>");
@@ -75,6 +75,7 @@ public class AddUser extends HttpServlet {
         out.println("</center>");
         out.println("</body></html>");
         out.close();
+        }
     }
 }
         
