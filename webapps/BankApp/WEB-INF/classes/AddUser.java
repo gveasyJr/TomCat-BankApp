@@ -48,17 +48,28 @@ public class AddUser extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         String username = request.getParameter("signup-username");
+        @SuppressWarnings("unchecked")
+        HashMap<String, User> addedUsers = (HashMap<String, User>)session.getAttribute("addedUsers");
 
         HashMap<String, User> users = null;
 
         boolean userExists = false;
 
-        if (!initCalled) {
+        if (!initCalled || addedUsers == null) {
             users = initUsers();
+            session.setAttribute("addedUsers", users);
             initCalled = true;
+        } else {
+            users = addedUsers;
         }
 
-        if (users.containsKey(username)) {
+        if(addedUsers != null){
+            if(addedUsers.containsKey(username)){
+                userExists = true;
+            }
+        }
+
+        else if (users.containsKey(username)) {
             userExists = true;
         }
 

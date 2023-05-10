@@ -22,8 +22,14 @@ public class User {
         return user;
     }*/
 
-    public void addAccount(Account account){
-        accounts.add(account);
+    public void addAccount(Account acct) throws IllegalArgumentException {
+        String acctName = acct.getAccountName();
+        for (Account account : accounts) {
+            if (account.getAccountName().equals(acctName)) {
+                throw new IllegalArgumentException("An account with the same name already exists");
+            }
+        }
+        accounts.add(acct);
     }
 
     public void deleteAccount(Account account){
