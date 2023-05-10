@@ -11,6 +11,8 @@ public class PreTransfer extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("currentUser");
+        Logger log = (Logger)session.getAttribute(user.getLogName());
+        log.logAction(user.getUsername() + " entered the transfer selection page");
         List<Account> accounts = user.getAccounts();
 
         response.setContentType("text/html");
@@ -62,6 +64,7 @@ public class PreTransfer extends HttpServlet {
         out.println("</center>");
         out.println("</body>");
         out.println("</html>");
+        session.setAttribute(user.getLogName(), log);
     }
 
     @Override

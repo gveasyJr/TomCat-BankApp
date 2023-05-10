@@ -10,6 +10,9 @@ public class PreDeleteAccount extends HttpServlet{
         String username = request.getParameter("login-username");
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("currentUser");
+        Logger log = (Logger)session.getAttribute(user.getLogName());
+        String logMessage = user.getUsername() + " entered the delete account selection page";
+        log.logAction(logMessage);
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -52,25 +55,16 @@ public class PreDeleteAccount extends HttpServlet{
 		out.println("</TABLE>");
 		out.println("<BR><BR><BR>");
 
-        // add form for deleting an account
         out.println("<form method=POST action=\"DeleteAccount\">");
         out.println("<label for=\"account-name\">Give Account to Delete:</label>");
         out.println("<input type=\"text\" id=\"account-name\" name=\"account-name\">");
         out.println("<br>");
-        //out.println("<input type=\"hidden\" name=\"login-username\" value=\"" + username + "\">");
         out.println("<input type=\"submit\" value=\"Delete Account\">");
         out.println("</form>");
-
-	
-        /*out.println("<form method=POST action=\"DeleteAccount\">");
-        out.println("<button name=\"login-username\" value=\"" + username + "\">Return home");
-        out.println("</form>");*/
-
-
         out.println("</center>");
         out.println("</body>");
         out.println("</html>");
-
+        session.setAttribute(user.getLogName(), log);
     }
 
     @Override

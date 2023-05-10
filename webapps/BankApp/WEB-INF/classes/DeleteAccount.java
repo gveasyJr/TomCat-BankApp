@@ -11,6 +11,8 @@ public class DeleteAccount extends HttpServlet {
         String username = request.getParameter("login-username");
         String acctName = request.getParameter("account-name");
         User user = (User)session.getAttribute("currentUser");
+        Logger log = (Logger)session.getAttribute(user.getLogName());
+        log.logAction(user.getUsername() + " attempting to delete account...");
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -40,6 +42,7 @@ public class DeleteAccount extends HttpServlet {
         try {
             Account accountToDelete = user.getAccount(acctName);
             if (accountToDelete.getBalance() != 0.0) {
+                log.logAction(user.getUsername() + " failed to delete an account");
                 out.println("<h1>Failed to delete account: " + accountToDelete.getAccountName() + "</h1>");
                 out.println("<form method=POST action=\"HomePage\">");
                 out.println("<button name=\"login-username\" value=\"" + username + "\">Return Home</button>");
@@ -50,6 +53,7 @@ public class DeleteAccount extends HttpServlet {
             } else {
                 user.deleteAccount(accountToDelete);
                 session.setAttribute("user", user);
+                log.logAction(user.getUsername() + " succeeded in the attempt to delete an account");
                 out.println("<h1>" + accountToDelete.getAccountName() + " account was successfully deleted</h1>");
                 out.println("<form method=POST action=\"HomePage\">");
                 out.println("<button name=\"login-username\" value=\"" + username + "\">Return Home</button>");
@@ -60,12 +64,14 @@ public class DeleteAccount extends HttpServlet {
             }
         } catch (NoSuchElementException e) {
             out.println("<h1>Failed to delete account: " + acctName + " was not found</h1>");
+            log.logAction(user.getUsername() + " failed to delete an account");
             out.println("<form method=POST action=\"HomePage\">");
             out.println("<button name=\"login-username\" value=\"" + username + "\">Return Home</button>");
             out.println("</form>");
             out.println("</center>");
             out.println("</body>");
             out.println("</html>");
+            session.setAttribute(user.getLogName(), log);
         }
 }
 

@@ -1,20 +1,19 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.List;
 import javax.servlet.ServletException;
-//import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class PreView extends HttpServlet {
+public class ViewLog extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session  = request.getSession();
+        HttpSession session = request.getSession();
         PrintWriter out = response.getWriter();
-        // Retrieve the User object from the session
-        User user = (User)session.getAttribute("currentUser");
-        Logger log = (Logger)session.getAttribute(user.getLogName());
-        log.logAction(user.getUsername() + " entered the view history page");
+        User user = (User) session.getAttribute("currentUser");
+        Logger log = (Logger) session.getAttribute(user.getLogName());
+        log.logAction(user.getUsername() + " entered the view log page");
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -34,29 +33,22 @@ public class PreView extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
 
-        out.println("<h1>Transaction History for User: " + user.getUsername() + "</h1>");
+        out.println("<h1>Transaction History</h1>");
 
-        List<Account> accounts = user.getAccounts();
+        List<String> actions = log.getActions();
+        List<LocalDateTime> timestamps = log.getTimestamps();
 
-        if (accounts.isEmpty()) {
-            out.println("<p>No accounts available</p>");
+        if (actions.size() == 0) {
+            out.println("<p>No actions recorded.</p>");
         } else {
-            for (Account account : accounts) {
-                String accountName = account.getAccountName();
-                List<History> transactions = account.getTransactions();
-
-                if (transactions.isEmpty()) {
-                    out.println("<h2>Account: " + accountName + "</h2>");
-                    out.println("<p>No transactions available</p>");
-                } else {
-                    out.println("<h2>Account: " + accountName + "</h2>");
-                    out.println("<ul>");
-                    for (History transaction : transactions) {
-                        out.println("<li>" + transaction.printHistory() + "</li>");
-                    }
-                    out.println("</ul>");
-                }
+            out.println("<table>");
+            out.println("<tr><th>Action</th><th>Timestamp</th></tr>");
+            for (int i = 0; i < actions.size(); i++) {
+                String action = actions.get(i);
+                LocalDateTime timestamp = timestamps.get(i);
+                out.println("<tr><td>" + action + "</td><td>" + timestamp + "</td></tr>");
             }
+            out.println("</table>");
         }
 
         out.println("<form method=\"POST\" action=\"HomePage\">");

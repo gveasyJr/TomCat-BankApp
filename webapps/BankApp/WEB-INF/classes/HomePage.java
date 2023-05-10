@@ -58,10 +58,19 @@ import javax.servlet.http.HttpSession;
 				loadInvalidUserHTML(out);
 			}
 			else{
-
 			User user = (User)session.getAttribute(username);
 
-        	session.setAttribute("currentUser", user);
+			if((Logger)session.getAttribute(user.getLogName()) == null){
+				Logger log = new Logger();
+				user.setLogger(log);
+				session.setAttribute(user.getLogName(), user.getLogger());
+			}
+
+			Logger log = (Logger)session.getAttribute(user.getLogName());
+			session.setAttribute("currentUser", user);
+			log.logAction(user.getUsername() + " entered the home page");
+     
+
 
         	response.setContentType("text/html");
         	response.setCharacterEncoding("UTF-8");
@@ -101,6 +110,10 @@ import javax.servlet.http.HttpSession;
 			out.println("<button name=\"login-username\" value=\"" + username + "\">View History</button><br>");
 			out.println("</form>");
 
+			out.println("<form method=\"POST\" action=\"ViewLog\">");
+			out.println("<button name=\"login-username\" value=\"" + username + "\">View Log</button><br>");
+			out.println("</form>");
+
 			out.println("<form method=\"POST\" action=\"index.html\">");
 			out.println("<button name=\"login-username\" value=\"\">Return to Login</button><br>");
 			out.println("</form>");
@@ -108,6 +121,7 @@ import javax.servlet.http.HttpSession;
 			out.println("</center>");
 			out.println("</body>");
 			out.println("</html>");
+			session.setAttribute(user.getLogName(), log);
 		}
 	}
 

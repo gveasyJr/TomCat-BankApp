@@ -9,6 +9,8 @@ import java.util.ArrayList;
 public class User {
     String username;
     List<Account> accounts;
+    Logger logger;
+
 
     public User(String username){
         this.username = username;
@@ -94,5 +96,16 @@ public class User {
         }
 
         return allTransactions;
+    }
+    public Logger getLogger() {
+        return logger;
+    }
+
+    public void setLogger(Logger logger) {
+        this.logger = logger;
+    }
+
+    public String getLogName(){
+        return username + " log";
     }
 }

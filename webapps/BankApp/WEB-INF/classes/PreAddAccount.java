@@ -8,6 +8,9 @@ public class PreAddAccount extends HttpServlet{
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("login-username");
         HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("currentUser");
+        Logger log = (Logger)session.getAttribute(user.getLogName());
+        log.logAction(username + " entered the add account selection page");
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -50,7 +53,7 @@ public class PreAddAccount extends HttpServlet{
         out.println("</center>");
         out.println("</body>");
         out.println("</html>");
-
+        session.setAttribute(user.getLogName(), log);
     }
 
     @Override

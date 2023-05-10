@@ -12,6 +12,8 @@ public class AddAccount extends HttpServlet {
         String type = request.getParameter("account-type");
         String acctName = request.getParameter("account-name");
         User user = (User)session.getAttribute("currentUser");
+        Logger log = (Logger)session.getAttribute(user.getLogName());
+        log.logAction(user.getUsername() + " attempting add account...");
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -53,6 +55,7 @@ public class AddAccount extends HttpServlet {
 
         
             session.setAttribute("currentUser", user);
+            log.logAction(user.getUsername() + " succeeded in the attempt to create an account");
         
             out.println("<h1>" + type + " account named '" + acctName + "' was successfully created " + "</h1>");
         
@@ -64,6 +67,7 @@ public class AddAccount extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         } catch (IllegalArgumentException e) {
+            log.logAction(user.getUsername() + " failed to delete an account");
             out.println("<h1>Failed to add the account - an account with the same name already exists</h1>");
         
             out.println("<form method=POST action=\"HomePage\">");
@@ -73,6 +77,7 @@ public class AddAccount extends HttpServlet {
             out.println("</center>");
             out.println("</body>");
             out.println("</html>");
+            session.setAttribute(user.getLogName(), log);
         }
     }
 

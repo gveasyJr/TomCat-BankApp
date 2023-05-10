@@ -13,6 +13,8 @@ public class Transfer extends HttpServlet {
         String sourceAccountName = request.getParameter("account-source");
         String destinationAccountName = request.getParameter("account-dest");
         String transferAmountStr = request.getParameter("amount");
+        Logger log = (Logger)session.getAttribute(user.getLogName());
+        log.logAction(user.getUsername() + " attempting to transfer funds...");
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -37,11 +39,13 @@ public class Transfer extends HttpServlet {
             Account destinationAccount = user.getAccount(destinationAccountName);
             
             if (sourceAccount == null || destinationAccount == null) {
+                log.logAction(user.getUsername() + " failed to transfer funds");
                 out.println("<h1>Failed to complete transfer: Invalid account(s)</h1>");
                 out.println("<form method=\"POST\" action=\"HomePage\">");
                 out.println("<button name=\"login-username\" value=\"" + user.getUsername() + "\">Return Home</button>");
                 out.println("</form>");
             } else if (transferAmount > sourceAccount.getBalance()) {
+                log.logAction(user.getUsername() + " failed to transfer funds");
                 out.println("<h1>Failed to complete transfer: Insufficient funds in the source account</h1>");
                 out.println("<form method=\"POST\" action=\"HomePage\">");
                 out.println("<button name=\"login-username\" value=\"" + user.getUsername() + "\">Return Home</button>");
@@ -49,17 +53,20 @@ public class Transfer extends HttpServlet {
             } else {
                 Account.doTransaction(sourceAccount, destinationAccount, transferAmount);
                 session.setAttribute("currentUser", user);
+                log.logAction(user.getUsername() + " succeeded in the attempt to  transfered funds");
                 out.println("<h1>Transfer of $" + transferAmount + " from " + sourceAccountName + " to " + destinationAccountName + " was successful</h1>");
                 out.println("<form method=\"POST\" action=\"HomePage\">");
                 out.println("<button name=\"login-username\" value=\"" + user.getUsername() + "\">Return Home</button>");
                 out.println("</form>");
             }
         } catch (NumberFormatException e) {
+            log.logAction(user.getUsername() + " failed to transfer funds");
             out.println("<h1>Failed to complete transfer: Invalid amount</h1>");
             out.println("<form method=\"POST\" action=\"HomePage\">");
             out.println("<button name=\"login-username\" value=\"" + user.getUsername() + "\">Return Home</button>");
             out.println("</form>");
         } catch (NoSuchElementException e) {
+            log.logAction(user.getUsername() + " failed to transfer funds");
             out.println("<h1>Failed to complete transfer: Invalid account(s)</h1>");
             out.println("<form method=\"POST\" action=\"HomePage\">");
             out.println("<button name=\"login-username\" value=\"" + user.getUsername() + "\">Return Home</button>");
@@ -69,6 +76,7 @@ public class Transfer extends HttpServlet {
         out.println("</center>");
         out.println("</body>");
         out.println("</html>");
+        session.setAttribute(user.getLogName(), log);
     }
 
     @Override

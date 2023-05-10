@@ -20,6 +20,17 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+         
+
+<servlet>
+    <servlet-name>ViewLog</servlet-name>
+    <servlet-class>ViewLog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewLog</servlet-name>
+    <url-pattern>/ViewLog</url-pattern>
+  </servlet-mapping>
+
 <servlet>
     <servlet-name>PreView</servlet-name>
     <servlet-class>PreView</servlet-class>
