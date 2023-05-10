@@ -24,6 +24,13 @@ public class AccountManager extends HttpServlet{
         out.println("<!DOCTYPE html><html>");
         out.println("<head>");
         out.println("<meta charset=\"UTF-8\" />");
+        out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Visibility:Visible\">");
+        out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Left:50\">");
+        out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Width:30\">");
+        out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Height:30\">");
+        out.println("<meta HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>");
+		out.println("<meta HTTP-EQUIV='Pragma' CONTENT='no-cache'>");
+		out.println("<meta HTTP-EQUIV='Expires' CONTENT='0'>");
         out.println("</head>");
         out.println("<center>"); 
 

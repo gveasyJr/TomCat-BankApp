@@ -2,22 +2,21 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Account {
-    Double balance;
-    String type;
-    String name;
-    List<History> transactions;
-
+    public Double balance;
+    public String type;
+    public String name;
+    public List<History> transactions;
 
     public Account(Double balance, String name){
         this.balance = balance;
         this.type = "DEFAULT";
         this.name = name;
-        this.transactions = new ArrayList<History>();
+        this.transactions = new ArrayList<>();
     }
 
     public static void doTransaction(Account fromAccount, Account toAccount, double amount){
         if(amount > fromAccount.getBalance()){
-            System.out.println("Failure: Insufficient funds for transfeer");
+            System.out.println("Failure: Insufficient funds for transfer");
             return;
         }
         toAccount.depositAccount(amount);
@@ -29,13 +28,28 @@ public class Account {
     }
 
     public void withdrawAccount(double amount){
-        balance = balance - amount;
-        transactions.add(new History("Withdrew", amount));
+        if (amount <= 0) {
+            System.out.println("Invalid amount for withdrawal");
+            return;
+        }
+
+        if (amount > balance) {
+            System.out.println("Insufficient funds for withdrawal");
+            return;
+        }
+
+        balance -= amount;
+        transactions.add(new History(name, "Withdrew", amount));
     }
 
     public void depositAccount(double amount){
-        balance = balance + amount;
-        transactions.add(new History("Deposited", amount));
+        if (amount <= 0) {
+            System.out.println("Invalid amount for deposit");
+            return;
+        }
+
+        balance += amount;
+        transactions.add(new History(name, "Deposited", amount));
     }
 
     public String getAccountName(){

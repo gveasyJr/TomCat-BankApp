@@ -5,7 +5,7 @@
 
 public class Test {
     public static void main(String [] args){
-        User user1 = new User("John Smith", 32);
+        User user1 = new User("John Smith");
         //Account acct1 = new Account(100.00, "Account #1");
 
         String acct1Name = "First Account";
@@ -95,7 +95,7 @@ public class Test {
 
 
 
-        /* user1.addAccount(acct3);
+
         System.out.println("After 3rd addAccount() call: " + user1.getAccountNames());
 
         //test transactions
@@ -133,6 +133,6 @@ public class Test {
         System.out.println("The 1st transaction history: " + acct1.getTransactions());
         System.out.println("The 2nd transaction history: " + acct3.getTransactions());
 
-        System.out.println("The 1st accounts name: " + acct1.getAccountName()); */
+        System.out.println("The 1st accounts name: " + acct1.getAccountName());
     }
 }

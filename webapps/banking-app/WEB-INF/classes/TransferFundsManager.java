@@ -10,11 +10,9 @@ public class TransferFundsManager extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
         HttpSession session = req.getSession();
-
         String username = req.getParameter("login-username");
 
         DatabaseReader dbr = new DatabaseReader();
-        boolean userExists = dbr.isUserExist(username);
 
         session.setAttribute("username", username);
 
@@ -34,7 +32,6 @@ public class TransferFundsManager extends HttpServlet {
         out.println("</head>");
         out.println("<center>");
         
-        User user = dbr.getUserObject(username);
         List<Account> accounts = dbr.getUserObject(username).getAccounts();
         
         out.println("<body>");

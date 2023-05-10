@@ -155,7 +155,7 @@ public class HomePage extends HttpServlet{
 		out.println("<button name=\"login-username\" value=\"" + username + "\">Transfer Funds</button><br>");
 		out.println("</form>");
 		
-		out.println("<form method=POST action=\"ViewAccountsHistory\">");
+		out.println("<form method=POST action=\"PreView\">");
 		out.println("<button name=\"login-username\" value=\"" + username + "\">View History</button><br>");
 		out.println("</form>");
 

@@ -1,14 +1,16 @@
 public class History {
     String action;
     double amount;
+    String name;
 
 
-    public History(String action, double amount){
+    public History(String name, String action, double amount){
         this.action = action;
         this.amount = amount;
+        this.name = name;
     }
 
     public String printHistory(){
-        return action + ": $" + amount;
+        return name + " " + action + ": $" + amount;
     }
 }

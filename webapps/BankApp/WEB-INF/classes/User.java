@@ -23,6 +23,10 @@ public class User {
     }*/
 
     public void addAccount(Account acct) throws IllegalArgumentException {
+        if (acct == null) {
+            throw new IllegalArgumentException("Account cannot be null");
+        }
+    
         String acctName = acct.getAccountName();
         for (Account account : accounts) {
             if (account.getAccountName().equals(acctName)) {
@@ -66,13 +70,17 @@ public class User {
         return accounts;
     }
 
-    public Account getAccount(String name){
-        for(int i = 0; i < accounts.size(); i++){
-            if(accounts.get(i).getAccountName().compareTo(name) == 0){
-                return accounts.get(i);
+    public Account getAccount(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Account name cannot be null");
+        }
+    
+        for (Account account : accounts) {
+            if (name.equals(account.getAccountName())) {
+                return account;
             }
         }
-        throw new NoSuchElementException("The account named: " + name + "was not found");
+        throw new NoSuchElementException("The account named: " + name + " was not found");
     }
 
     public List<String> getAccountNames(){
@@ -81,5 +89,15 @@ public class User {
             accountNames.add(accounts.get(i).getAccountName());
         }
         return accountNames;
+    }
+    public List<History> getAllTransactions() {
+        List<History> allTransactions = new ArrayList<>();
+
+        for (Account account : accounts) {
+            List<History> transactions = account.getTransactions();
+            allTransactions.addAll(transactions);
+        }
+
+        return allTransactions;
     }
 }

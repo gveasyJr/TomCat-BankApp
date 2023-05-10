@@ -20,7 +20,77 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+<servlet>
+    <servlet-name>PreView</servlet-name>
+    <servlet-class>PreView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PreView</servlet-name>
+    <url-pattern>/PreView</url-pattern>
+  </servlet-mapping>
 
+<servlet>
+    <servlet-name>Transfer</servlet-name>
+    <servlet-class>Transfer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Transfer</servlet-name>
+    <url-pattern>/Transfer</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>PreTransfer</servlet-name>
+    <servlet-class>PreTransfer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PreTransfer</servlet-name>
+    <url-pattern>/PreTransfer</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>DeleteAccount</servlet-name>
+    <servlet-class>DeleteAccount</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteAccount</servlet-name>
+    <url-pattern>/DeleteAccount</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>PreDeleteAccount</servlet-name>
+    <servlet-class>PreDeleteAccount</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PreDeleteAccount</servlet-name>
+    <url-pattern>/PreDeleteAccount</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>ViewAccounts</servlet-name>
+    <servlet-class>ViewAccounts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAccounts</servlet-name>
+    <url-pattern>/ViewAccounts</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>AddAccount</servlet-name>
+    <servlet-class>AddAccount</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddAccount</servlet-name>
+    <url-pattern>/AddAccount</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>PreAddAccount</servlet-name>
+    <servlet-class>PreAddAccount</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PreAddAccount</servlet-name>
+    <url-pattern>/PreAddAccount</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>AddUser</servlet-name>

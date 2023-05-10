@@ -6,9 +6,7 @@ import java.util.logging.*;
 public class DatabaseWriter implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    public DatabaseWriter() {
-    }
-
+    public DatabaseWriter() {}
 
     public static void writeUserToDatabase(User object) {
         Logger logger = Logger.getLogger("DatabaseWriter");
@@ -18,20 +16,18 @@ public class DatabaseWriter implements Serializable {
             try {
                 ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream(file, true));
                 ostream.writeObject(object);
-                logger.info("Added " + object.getUsername() + " to usersdb");
+                ostream.flush();
                 ostream.close();
             } catch (FileNotFoundException e) {
-                logger.info("filee not found");
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-                logger.info(e.toString());
             }
         } else {
             try {
                 AppendingObjectOutputStream aostream = new AppendingObjectOutputStream(new FileOutputStream(file, true));
                 aostream.writeObject(object);
-                logger.info("Appended " + object.getUsername() + " to usersdb");
+                aostream.flush();
                 aostream.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -94,9 +90,21 @@ public class DatabaseWriter implements Serializable {
 
     public static void rewriteModifiedAccount(Account moddedAcc) {
         File file = new File("../../accountsdb");
-
+        
         DatabaseReader dbr = new DatabaseReader();
         List<Account> accounts = dbr.getAllAccountsObjects();
+        
+        // hacky fix
+        PrintWriter out;
+        try {
+            out = new PrintWriter(file);
+            out.print("");
+            out.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+        
         try {
             ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream(file, true));
             ostream.reset();

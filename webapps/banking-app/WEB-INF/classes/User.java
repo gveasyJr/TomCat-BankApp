@@ -39,9 +39,19 @@ public class User implements Serializable{
 				accs.add(a);
 			}
 		}
-		
+		this.accounts = accs;
 		return accs;
 		// return this.accounts;
+	}
+
+	public Account getAccountById(String accountId) {
+		List<Account> accs = new ArrayList<>();
+		for (Account a : accs) {
+			if (a.getAccountId().equals(accountId)) {
+				return a;
+			}
+		}
+		return null;
 	}
 
 	public int getAccountsSize() {
@@ -54,7 +64,6 @@ public class User implements Serializable{
 			return -1;
 		}
 		
-		List<Account> accs = this.getAccounts();
 		Account srcAcc = null;
 		Account destAcc = null;
 		
@@ -77,32 +86,32 @@ public class User implements Serializable{
 		return 0;
 	}
 
-	public void addAccount2(Account acc) {
+	public void addAccount(Account acc) {
 		this.accounts.add(acc);
 	}
 
-    public int addAccount(String accType, double balance) {
-		if (balance < 0) {
-			System.out.println("Invalid starting balance.");
-			return -1;
-		}
+    // public int addAccount(String accType, double balance) {
+	// 	if (balance < 0) {
+	// 		System.out.println("Invalid starting balance.");
+	// 		return -1;
+	// 	}
 		
-		Account acc = null;
+	// 	Account acc = null;
         
-		if (accType.equals("savings")) {
-			acc = new SavingAccount(this.username, balance);
-			this.accounts.add(acc);
-		} else if (accType.equals("checking")) {
-			acc = new CheckingAccount(this.username, balance);
-			this.accounts.add(acc);
-		} else if (accType.equals("money-market")) {
-			acc = new MoneyMarketAccount(this.username, balance);
-			this.accounts.add(acc);
-		} else {
-			return -1;
-		}
-		return 0;
-    }
+	// 	if (accType.equals("savings")) {
+	// 		acc = new SavingAccount(this.username, balance);
+	// 		this.accounts.add(acc);
+	// 	} else if (accType.equals("checking")) {
+	// 		acc = new CheckingAccount(this.username, balance);
+	// 		this.accounts.add(acc);
+	// 	} else if (accType.equals("money-market")) {
+	// 		acc = new MoneyMarketAccount(this.username, balance);
+	// 		this.accounts.add(acc);
+	// 	} else {
+	// 		return -1;
+	// 	}
+	// 	return 0;
+    // }
 
 	public int removeAccount(String accId) {
 		Account acc = null;

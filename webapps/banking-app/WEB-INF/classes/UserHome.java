@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
 // import java.util.logging.LogManager;
-import java.util.logging.LogManager;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -43,8 +42,6 @@ public class UserHome extends HttpServlet {
         out.println("</head>");
         out.println("<center>");
 
-        logger.info("checking if " + username + " exists: " + dbr.isUserExist(username));
-
         // check if user login exists
         if (!dbr.isUserExist(username)) {
             this.loadInvalidUserHTML(out);
@@ -78,7 +75,7 @@ public class UserHome extends HttpServlet {
         out.println("<button name=\"login-username\" value=\"" + username + "\">Transfer Funds to Another Account");
         out.println("</form>");
 
-        out.println("<form method=POST action=\"ViewAccountsHistory\">");
+        out.println("<form method=POST action=\"ViewTransactionHistory\">");
         out.println("<button name=\"login-username\" value=\"" + username + "\">View Accounts History");
         out.println("</form>");
     }

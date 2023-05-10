@@ -37,7 +37,10 @@
         <servlet-name>TransferFundsManager</servlet-name>
         <servlet-class>TransferFundsManager</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>ViewTransactionHistory</servlet-name>
+        <servlet-class>ViewTransactionHistory</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>UserHome</servlet-name>
@@ -67,5 +70,8 @@
         <servlet-name>TransferFundsManager</servlet-name>
         <url-pattern>/TransferFundsManager</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>ViewTransactionHistory</servlet-name>
+        <url-pattern>/ViewTransactionHistory</url-pattern>
+    </servlet-mapping>
 </web-app>

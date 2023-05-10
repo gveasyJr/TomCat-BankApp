@@ -22,13 +22,15 @@ public class DatabaseReader implements Serializable {
                 ObjectInputStream ostream = new ObjectInputStream(new FileInputStream(file));
                 while (true) {
                     try {
-                        users.add((User)ostream.readObject());
-                        
+                        User u = (User)ostream.readObject();
+                        users.add(u);
+                        logger.info("read user: " + u.getUsername());
                     } catch (Exception err) {
-                        ostream.close();
+                        
                         break;
                     }
                 }
+                ostream.close();
             }
         } catch (Exception err) {
             // do nothing
@@ -47,10 +49,10 @@ public class DatabaseReader implements Serializable {
                     try {
                         accounts.add((Account)ostream.readObject());
                     } catch (Exception err) {
-                        ostream.close();
                         break;
                     }
                 }
+                ostream.close();
             }
         } catch (Exception err) {
             // do nothing

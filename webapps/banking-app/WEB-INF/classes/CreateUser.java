@@ -50,11 +50,7 @@ public class CreateUser extends HttpServlet {
             out.println("<form method=POST action=\"UserHome\">");
             out.println("<button name=\"login-username\" value=\"" + username + "\">Return to User Home Page</button>");
             out.println("</form>");
-        } else {
-
         }
-
-
         out.println("</center>");
         out.println("</body>");
         out.println("</html>");

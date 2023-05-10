@@ -82,10 +82,11 @@ public class TransferFunds extends HttpServlet {
 
     private void validTransferHTML() {
         out.println("<h1>Transfer Success</h1>");
-        logger.info("BEFORE: src: " + src.getBalance() + " dest: " + dest.getBalance());
-        // src.withdraw(convertAmount);
-        // dest.deposit(convertAmount);
-        logger.info("AFTER: src: " + src.getBalance() + " dest: " + dest.getBalance());
+        src.withdraw(convertAmount);
+        dest.deposit(convertAmount);
+
+        logger.info(username + " transfered " + String.valueOf(convertAmount) + " from " + src.getAccountType() + " (" + src.getAccountId() + ") to "  + dest.getAccountType() + " (" + dest.getAccountId() + ")");
+
         DatabaseWriter.rewriteModifiedUser(user);
         DatabaseWriter.rewriteModifiedAccount(src);
         DatabaseWriter.rewriteModifiedAccount(dest);

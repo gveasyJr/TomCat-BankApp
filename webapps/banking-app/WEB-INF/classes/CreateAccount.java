@@ -50,7 +50,7 @@ public class CreateAccount extends HttpServlet {
             acc = new MoneyMarketAccount(username, convertInitBalance);
 		}
         
-        user.addAccount2(acc);
+        user.addAccount(acc);
         // add account to AccountsDB
         DatabaseWriter.writeAccountToDatabase(acc);
         DatabaseWriter.rewriteModifiedUser(user);
