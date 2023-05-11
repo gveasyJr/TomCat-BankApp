@@ -39,7 +39,13 @@ import javax.servlet.http.HttpSession;
 			String filePath = context.getRealPath("/users.dat");
         	PrintWriter out = response.getWriter();
 			UserManager uM = new UserManager();
-			uM.initUsers(filePath); //check if need to initialize file, and also does
+			Boolean init = false;
+			
+			if(init == false){
+				uM.initUsers(filePath);
+				loadInit(out);
+			}
+			//uM.initUsers(filePath); //check if need to initialize file, and also does
 			
 			if(username == null || session.getAttribute(username) == null){ //is un blank or does it not --> User obj?
 				loadInvalidUserHTML(out); //go to sign in
@@ -124,11 +130,62 @@ import javax.servlet.http.HttpSession;
 	}
 
 		public void loadInvalidUserHTML(PrintWriter out) {
+			out.println("<!DOCTYPE html><html>");
+			out.println("<head>");
+			out.println("<meta charset=\"UTF-8\" />");
+			out.println("<META HTTP-EQUIV=\"Pragma\" CONTENT=\"no-cache\">");
+			out.println("<META HTTP-EQUIV=\"Cache-control\" CONTENT=\"no-cache\">");
+			out.println("<META HTTP-EQUIV=\"Expires\" CONTENT=\"0\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Visibility:Visible\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Left:50\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Width:30\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Height:30\">");
+			out.println("<meta HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>");
+			out.println("<meta HTTP-EQUIV='Pragma' CONTENT='no-cache'>");
+			out.println("<meta HTTP-EQUIV='Expires' CONTENT='0'>");
+			out.println("</head>");
+			out.println("<body>");
+			out.println("<center>");
+
 			out.println("<h1>Username does not exist.</h1>");
 			out.println("<h1>Please create an account</h1>");
 			out.println("<form method=\"POST\" action=\"HomePage\">");
 			out.println("<a href=\"adduser.html\"><input type=\"button\" value=\"Sign up\"></a>");
 			out.println("</form>");
+
+			out.println("</center>");
+			out.println("</body>");
+			out.println("</html>");
+			out.flush();
+		}
+
+		public void loadInit(PrintWriter out) {
+			out.println("<!DOCTYPE html><html>");
+			out.println("<head>");
+			out.println("<meta charset=\"UTF-8\" />");
+			out.println("<META HTTP-EQUIV=\"Pragma\" CONTENT=\"no-cache\">");
+			out.println("<META HTTP-EQUIV=\"Cache-control\" CONTENT=\"no-cache\">");
+			out.println("<META HTTP-EQUIV=\"Expires\" CONTENT=\"0\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Visibility:Visible\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Left:50\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Width:30\">");
+			out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Height:30\">");
+			out.println("<meta HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>");
+			out.println("<meta HTTP-EQUIV='Pragma' CONTENT='no-cache'>");
+			out.println("<meta HTTP-EQUIV='Expires' CONTENT='0'>");
+			out.println("</head>");
+			out.println("<body>");
+			out.println("<center>");
+
+			out.println("<h1>Creating default user objects...</h1>");
+			out.println("<h1>Return to the homepage and login again</h1>");
+			out.println("<form method=\"POST\" action=\"HomePage\">");
+			out.println("<a href=\"adduser.html\"><input type=\"button\" value=\"Sign up\"></a>");
+			out.println("</form>");
+
+			out.println("</center>");
+			out.println("</body>");
+			out.println("</html>");
 			out.flush();
 		}
 }
