@@ -729,3 +729,9 @@
 0:0:0:0:0:0:0:1 - tomcat [10/May/2023:22:46:16 -0500] "GET /manager/html HTTP/1.1" 200 31217
 0:0:0:0:0:0:0:1 - - [10/May/2023:22:46:22 -0500] "POST /BankApp/HomePage HTTP/1.1" 200 1746
 0:0:0:0:0:0:0:1 - - [10/May/2023:22:46:27 -0500] "POST /BankApp/index.html HTTP/1.1" 200 919
+0:0:0:0:0:0:0:1 - tomcat [10/May/2023:22:50:00 -0500] "GET /manager/html HTTP/1.1" 200 31217
+0:0:0:0:0:0:0:1 - tomcat [10/May/2023:22:50:12 -0500] "GET /manager/html HTTP/1.1" 200 31217
+0:0:0:0:0:0:0:1 - - [10/May/2023:22:50:16 -0500] "POST /BankApp/HomePage HTTP/1.1" 200 1746
+0:0:0:0:0:0:0:1 - - [10/May/2023:22:50:18 -0500] "POST /BankApp/PreAddAccount HTTP/1.1" 200 1261
+0:0:0:0:0:0:0:1 - - [10/May/2023:22:50:21 -0500] "POST /BankApp/PreDeleteAccount HTTP/1.1" 200 1243
+0:0:0:0:0:0:0:1 - - [10/May/2023:22:50:24 -0500] "POST /BankApp/PreTransfer HTTP/1.1" 200 1626

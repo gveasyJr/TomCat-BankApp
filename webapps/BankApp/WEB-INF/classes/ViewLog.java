@@ -23,6 +23,9 @@ public class ViewLog extends HttpServlet {
         out.println("<html>");
         out.println("<head>");
         out.println("<meta charset=\"UTF-8\" />");
+        out.println("<meta http-equiv=\"Pragma\" content=\"no-cache\">");
+        out.println("<meta http-equiv=\"Cache-control\" content=\"no-cache\">");
+        out.println("<meta http-equiv=\"Expires\" content=\"0\">");
         out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Visibility:Visible\">");
         out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Left:50\">");
         out.println("<meta HTTP-EQUIV=\"BackButton\" Content=\"Width:30\">");
