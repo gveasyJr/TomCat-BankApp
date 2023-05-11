@@ -39,14 +39,9 @@ import javax.servlet.http.HttpSession;
 			String filePath = context.getRealPath("/users.dat");
         	PrintWriter out = response.getWriter();
 			UserManager uM = new UserManager();
-			Boolean init = false;
-			
-			if(init == false){
-				uM.initUsers(filePath);
-				loadInit(out);
-				init = true;
-			}
-			else{
+			uM.initUsers(filePath);
+
+	
 			//uM.initUsers(filePath); //check if need to initialize file, and also does
 			
 			if(username == null || session.getAttribute(username) == null){ //is un blank or does it not --> User obj?
@@ -129,7 +124,6 @@ import javax.servlet.http.HttpSession;
 			out.println("</html>");
 			session.setAttribute(user.getLogName(), log);
 		}
-	}
 	}
 
 		public void loadInvalidUserHTML(PrintWriter out) {
