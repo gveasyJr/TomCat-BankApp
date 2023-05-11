@@ -44,7 +44,9 @@ import javax.servlet.http.HttpSession;
 			if(init == false){
 				uM.initUsers(filePath);
 				loadInit(out);
+				init = true;
 			}
+			else{
 			//uM.initUsers(filePath); //check if need to initialize file, and also does
 			
 			if(username == null || session.getAttribute(username) == null){ //is un blank or does it not --> User obj?
@@ -128,6 +130,7 @@ import javax.servlet.http.HttpSession;
 			session.setAttribute(user.getLogName(), log);
 		}
 	}
+	}
 
 		public void loadInvalidUserHTML(PrintWriter out) {
 			out.println("<!DOCTYPE html><html>");
@@ -178,7 +181,7 @@ import javax.servlet.http.HttpSession;
 			out.println("<center>");
 
 			out.println("<h1>Creating default user objects...</h1>");
-			out.println("<h1>Return to the homepage and login again</h1>");
+			out.println("<h1>Create a new user before gaining acess</h1>");
 			out.println("<form method=\"POST\" action=\"HomePage\">");
 			out.println("<a href=\"adduser.html\"><input type=\"button\" value=\"Sign up\"></a>");
 			out.println("</form>");
