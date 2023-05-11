@@ -14,6 +14,9 @@ public class PreTransfer extends HttpServlet {
         Logger log = (Logger)session.getAttribute(user.getLogName());
         log.logAction(user.getUsername() + " entered the transfer selection page");
         List<Account> accounts = user.getAccounts();
+        ServletContext context = getServletContext();
+        String filePath = context.getRealPath("/users.dat");
+        UserManager uM = new UserManager();
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -65,6 +68,7 @@ public class PreTransfer extends HttpServlet {
         out.println("</body>");
         out.println("</html>");
         session.setAttribute(user.getLogName(), log);
+        uM.writeUser(user, filePath);
     }
 
     @Override

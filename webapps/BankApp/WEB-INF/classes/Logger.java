@@ -1,10 +1,12 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Logger {
+public class Logger implements Serializable{
     private List<String> actions;
     private List<LocalDateTime> timestamps;
+    private static final long serialVersionUID = 1L;
 
     public Logger() {
         actions = new ArrayList<>();

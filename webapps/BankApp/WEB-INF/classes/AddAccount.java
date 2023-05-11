@@ -14,6 +14,9 @@ public class AddAccount extends HttpServlet {
         User user = (User)session.getAttribute("currentUser");
         Logger log = (Logger)session.getAttribute(user.getLogName());
         log.logAction(user.getUsername() + " attempting add account...");
+        ServletContext context = getServletContext();
+        String filePath = context.getRealPath("/users.dat");
+        UserManager uM = new UserManager();
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -79,6 +82,7 @@ public class AddAccount extends HttpServlet {
             out.println("</html>");
             session.setAttribute(user.getLogName(), log);
         }
+        uM.writeUser(user, filePath);
     }
 
     @Override

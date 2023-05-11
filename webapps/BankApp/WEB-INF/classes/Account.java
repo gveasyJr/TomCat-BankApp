@@ -1,11 +1,13 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Account {
+public class Account implements Serializable{
     public Double balance;
     public String type;
     public String name;
     public List<History> transactions;
+    private static final long serialVersionUID = 1L;
 
     public Account(Double balance, String name){
         this.balance = balance;

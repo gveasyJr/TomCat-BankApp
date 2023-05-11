@@ -1,7 +1,10 @@
-public class History {
+import java.io.Serializable;
+
+public class History implements Serializable{
     String action;
     double amount;
     String name;
+    private static final long serialVersionUID = 1L;
 
 
     public History(String name, String action, double amount){

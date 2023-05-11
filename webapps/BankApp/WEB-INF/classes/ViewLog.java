@@ -14,6 +14,7 @@ public class ViewLog extends HttpServlet {
         User user = (User) session.getAttribute("currentUser");
         Logger log = (Logger) session.getAttribute(user.getLogName());
         log.logAction(user.getUsername() + " entered the view log page");
+        
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

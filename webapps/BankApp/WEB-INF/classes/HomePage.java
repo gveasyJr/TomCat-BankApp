@@ -1,7 +1,10 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.io.Serializable;
+import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,32 +35,27 @@ import javax.servlet.http.HttpSession;
     	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         	String username = request.getParameter("login-username");
         	HttpSession session = request.getSession();
+			ServletContext context = getServletContext();
+			String filePath = context.getRealPath("/users.dat");
         	PrintWriter out = response.getWriter();
-
-			if(session.getAttribute("adam1") == null || session.getAttribute("guy3") == null){
-				User user1 = new User("adam1");
-				Checking acct1 = new Checking(200.0, "Adam's Checkings Account");
-				Saving acct2 = new Saving(1200.0, "Adam's Savings Account");
-				Mortgage acct3 = new Mortgage(300.0, "Adam's Mortgages Account");
-				user1.addAccount(acct1);
-				user1.addAccount(acct2);
-				user1.addAccount(acct3);
-				session.setAttribute("adam1", user1);
-		
-				User user2 = new User("guy3");
-				Checking acct4 = new Checking(10.0, "Guy's Checkings Account");
-				Saving acct5 = new Saving(900.0, "Guy's Savings Account");
-				Mortgage acct6 = new Mortgage(4000.0, "Guy's Mortgages Account");
-				user2.addAccount(acct4);
-				user2.addAccount(acct5);
-				user2.addAccount(acct6);
-				session.setAttribute("guy3", user2);
-			}
+			UserManager uM = new UserManager();
+			uM.initUsers(filePath); //check if need to initialize file, and also does
 			
-			if(username == null || session.getAttribute(username) == null){
-				loadInvalidUserHTML(out);
+			if(username == null || session.getAttribute(username) == null){ //is un blank or does it not --> User obj?
+				loadInvalidUserHTML(out); //go to sign in
 			}
 			else{
+				//so a user exists
+				User userFile = uM.returnUserByUsername(username, filePath);//Is there a user with that username in the file
+				User currentUser = (User)session.getAttribute(username);//get the user object associated with that username 
+				if(userFile == null){ //if they didn't find a match
+					uM.writeUser(currentUser, filePath); //write the user to the file
+					session.setAttribute(username, currentUser); //set session user
+				}
+				else{ //if user was found
+					session.setAttribute(username, userFile); //set it as the session user
+				}
+
 			User user = (User)session.getAttribute(username);
 
 			if((Logger)session.getAttribute(user.getLogName()) == null){
@@ -135,3 +133,24 @@ import javax.servlet.http.HttpSession;
 		}
 }
 
+
+
+			/*if(session.getAttribute("adam1") == null || session.getAttribute("guy3") == null){
+				User user1 = new User("adam1");
+				Checking acct1 = new Checking(200.0, "Adam's Checkings Account");
+				Saving acct2 = new Saving(1200.0, "Adam's Savings Account");
+				Mortgage acct3 = new Mortgage(300.0, "Adam's Mortgages Account");
+				user1.addAccount(acct1);
+				user1.addAccount(acct2);
+				user1.addAccount(acct3);
+				session.setAttribute("adam1", user1);
+		
+				User user2 = new User("guy3");
+				Checking acct4 = new Checking(10.0, "Guy's Checkings Account");
+				Saving acct5 = new Saving(900.0, "Guy's Savings Account");
+				Mortgage acct6 = new Mortgage(4000.0, "Guy's Mortgages Account");
+				user2.addAccount(acct4);
+				user2.addAccount(acct5);
+				user2.addAccount(acct6);
+				session.setAttribute("guy3", user2);
+			}*/

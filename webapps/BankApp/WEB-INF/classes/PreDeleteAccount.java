@@ -13,6 +13,9 @@ public class PreDeleteAccount extends HttpServlet{
         Logger log = (Logger)session.getAttribute(user.getLogName());
         String logMessage = user.getUsername() + " entered the delete account selection page";
         log.logAction(logMessage);
+        ServletContext context = getServletContext();
+        String filePath = context.getRealPath("/users.dat");
+        UserManager uM = new UserManager();
 
         if (username == null) {
             username = session.getAttribute("username").toString();
@@ -65,6 +68,7 @@ public class PreDeleteAccount extends HttpServlet{
         out.println("</body>");
         out.println("</html>");
         session.setAttribute(user.getLogName(), log);
+        uM.writeUser(user, filePath);
     }
 
     @Override

@@ -1,15 +1,17 @@
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.ArrayList;
+import java.io.Serializable;
 //A "User" object will be used to represent a single bank user:
 //Example: John Smith
 //A User should have: An ID --> A Username --> A list of accounts
 //A User should be able to: Add and Remove accounts
 
-public class User {
+public class User implements Serializable{
     String username;
     List<Account> accounts;
     Logger logger;
+    private static final long serialVersionUID = 1L;
 
 
     public User(String username){

@@ -15,6 +15,9 @@ public class Transfer extends HttpServlet {
         String transferAmountStr = request.getParameter("amount");
         Logger log = (Logger)session.getAttribute(user.getLogName());
         log.logAction(user.getUsername() + " attempting to transfer funds...");
+        ServletContext context = getServletContext();
+        String filePath = context.getRealPath("/users.dat");
+        UserManager uM = new UserManager();
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -77,6 +80,7 @@ public class Transfer extends HttpServlet {
         out.println("</body>");
         out.println("</html>");
         session.setAttribute(user.getLogName(), log);
+        uM.writeUser(user, filePath);
     }
 
     @Override
